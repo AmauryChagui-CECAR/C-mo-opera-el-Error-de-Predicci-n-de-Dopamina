@@ -19,9 +19,9 @@ npm run dev
 
 ## Compilación y publicación en GitHub Pages
 
-1. Sube este repositorio a GitHub (rama `main`).
-2. En **Settings → Pages**, selecciona **GitHub Actions** como fuente de despliegue.
-3. El flujo `.github/workflows/deploy.yml` ejecutará `npm run build` y publicará la carpeta `dist/` automáticamente.
+1. Sube este repositorio a GitHub (rama `main` o `master`).
+2. En GitHub, ve a **Settings → Pages → Build and deployment → Source** y selecciona **GitHub Actions** (no *Deploy from a branch*, ya que servir el `index.html` raíz sin compilar provoca el error de MIME type en `main.tsx`).
+3. El flujo `.github/workflows/deploy.yml` ejecutará automáticamente `npm run build` y publicará la carpeta estática `dist/` inmediatamente en cada `push`.
 
 Para compilar manualmente en local:
 
